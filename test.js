@@ -11,6 +11,11 @@ var data = 'world!';
 var out = strinter('Hello %s', data);
 console.log(out);
 
+// pass a number
+var data = 10;
+var out = strinter('Number %d', data);
+console.log(out);
+
 // pass an object
 data = {name: 'Jorge', lastname: 'Ramirez', age: 22};
 out = strinter('Hello I am %(name)s %(lastname)s. I\'m %(age)d years old', data);

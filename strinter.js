@@ -13,12 +13,13 @@
 
   exports.strinter = function( str, values ) {
     var parsed = str,
-        type, re;
+        type = typeof values, 
+        re;
 
     if( typeof str !== 'string' || str.length === 0 ){
       return '';
     }
-    if( typeof values === 'string' ){
+    if( type === 'string' || type === 'number' ){
       values = [ values ];
     }
     if( values instanceof Array ){
@@ -32,12 +33,12 @@
         type = typeof values[ i ];
 
         if( type === 'string' ){
-          if( sp > dp && dp > 0 ){
+          if( sp > dp && dp > 0 || ( sp === -1 && values.length === 1 ) ){
             error( 'found %d instead of %s' );
           }
           re = /%s/;
         }else if( type === 'number' ){
-          if( dp > sp && sp > 0 ){
+          if( dp > sp && sp > 0 || ( dp === -1 && values.length === 1 ) ){
             error( 'found %s instead of %d' );
           }
           re = /%d/;
