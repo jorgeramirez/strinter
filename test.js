@@ -28,9 +28,4 @@ console.log(out);
 
 // display error
 data = ['Jorge', 'Ramirez', 22];
-try{
-  out = strinter('Hello I am %d %s. I\'m %d years old', data);
-  console.log(out);
-}catch(e){
-  console.log('Error Message: ', e);
-}
+out = strinter('Hello I am %d %s. I\'m %d years old', data);

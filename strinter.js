@@ -7,8 +7,17 @@
 (function( exports ) {
   "use strict";
   
+  var red = '', green = '', reset = '';
+ 
+  if( typeof process !== 'undefined' && typeof process.execPath !== 'undefined' ){
+    red = '\u001b[31m';
+    green = '\u001b[32m';
+    reset = '\u001b[0m';
+  }
+
   function error( msg ) {
-    throw msg;
+    console.log( red, '[Error]', reset, msg );
+    return 1;
   }
 
   exports.strinter = function( str, values ) {
