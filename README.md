@@ -17,7 +17,7 @@ console.log(out);
 
 And the browser version looks like the following
 
-```javascript
+```html
 <script type="text/javascript" src="strinter.js">
   // pass an object
   var data = {name: 'Jorge', lastname: 'Ramirez', age: 22};
@@ -33,4 +33,4 @@ And the browser version looks like the following
 
 ## License
 
-`strinter` is licensed under (GPLv3)[http://www.gnu.org/licenses/gpl.txt]
+`strinter` is licensed under [GPLv3](http://www.gnu.org/licenses/gpl.txt)
